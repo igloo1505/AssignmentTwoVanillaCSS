@@ -7,10 +7,15 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--dark);
 }
 
+body {
+    background-image: url('webb.png');
+    overflow: hidden;
+}
 
 
 nav {
@@ -22,7 +27,7 @@ nav {
 }
 
 .innerContainer {
-    max-width: 1000px;
+    max-width: min(1000px, 95%);
     height: 100%;
     margin: auto;
     padding: 0 20px;
@@ -39,6 +44,7 @@ nav {
     display: inline-block;
     font-size: 0.8rem;
     margin: 0;
+    padding: 0 5px;
     pointer-events: initial;
     transform: translateY(-3px);
 }
@@ -56,7 +62,6 @@ nav {
     text-decoration: none;
     color: var(--dark);
     background-color: #ffffff;
-
 }
 
 
@@ -68,13 +73,15 @@ nav {
     background-color: #4aaaa5;
     padding: 0 20px;
     margin: 0;
-    position: absolute;
+    /* position: absolute; */
     display: inline-block;
 }
 
 .mainContainer {
     width: min(900px, 80%);
     margin: 30px auto auto auto;
+    background-color: #ffffff;
+    padding: 15px;
 }
 
 .aboutMe {
@@ -102,9 +109,158 @@ nav {
     padding: 8px;
 }
 
+.portContainer {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.desperateAttemptatACardBox {
+    width: 250px;
+    position: relative;
+    height: 300px;
+    border: 2px solid var(--dark);
+}
+
+.cardDescription {
+    bottom: 0;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    color: var(--dark);
+    background: #fff;
+    border-top: medium solid var(--dark);
+    padding: 5px;
+}
+
+.cardImage {
+    height: 100%;
+    background-color: var(--dark);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.IgiveupAndUseFlex {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    width: fit-content;
+    height: fit-content;
+    /* margin-top: 50%; */
+    /* margin-left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    background-color: #fff;
+    padding: 50px;
+}
+
+i {
+    padding: 10px;
+    transform: translateY(7px);
+}
+
+.email {
+    padding: 30px 0;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+.submit {
+    display: inline-block;
+    color: #fff;
+    background-color: var(--primary);
+    width: 100%;
+    margin: 30px 0;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fa-book {
+
+    transform: translateY(120px);
+    padding-right: 5px;
+}
+
+.submit:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.1);
+}
+
+textarea {
+    width: 300px;
+    padding: 20px;
+    transform: translateX(45px);
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .innerContainer li {
+        display: none;
+    }
+
+
+
+    textarea {
+        transform: translateX(0px);
+    }
+
+    .fa {
+        display: none;
+    }
+
+    .portContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .innerContainer h1 {
+        display: block;
+        text-align: center;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+        background-size: contain;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .infoSection {
@@ -112,4 +268,17 @@ nav {
     }
 
 
+
+    i {
+        display: none;
+    }
+
+    .portContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .infoSection img {
+        display: block;
+        margin: 20px auto;
+    }
 }

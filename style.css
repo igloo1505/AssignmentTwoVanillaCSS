@@ -218,7 +218,9 @@ textarea {
 
 
 
-
+.mobileUL {
+    display: none;
+}
 
 
 
@@ -253,6 +255,8 @@ textarea {
     }
 
     .mobileUL {
+        z-index: 1000;
+        display: block;
         text-decoration: none;
         text-align: right;
         position: fixed;
